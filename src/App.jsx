@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const App = () => {
-  const [rotate, setRotate] = useState(false);
+  const [move, setMove] = useState(false);
   return (
     <div className="model">
       <motion.div
         className="body"
-        animate={{ rotate: rotate ? 360 : 0 }}
+        animate={{ x: move ? "100%" : "-100%" }}
+        // transition={{ type : "tween", duration : 1 }}       // ===== For Smooth transition ===========
+        transition={{ type : "spring", bounce : 0.4 }}       // ===== For bounce transition ===========
         onClick={() => {
-          setRotate(!rotate);
+          setMove(!move);
         }}
       ></motion.div>
     </div>
