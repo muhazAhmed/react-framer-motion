@@ -7,9 +7,9 @@ const App = () => {
     <div className="model">
       <motion.div 
         className="body"
-        // whileHover={{ scale: 1.2 }}       //=========== Hover zoom effect ========
-        drag whileDrag={{scale : 1}}         // =========== Able to drag and play =====
-      >
+        animate={{ x : [0, 200, -200, 0, 200, 0]}}
+        transition={{repeat : Infinity, duration : 5}}
+      >Loading, Please wait...
       </motion.div>
     </div>
   );
